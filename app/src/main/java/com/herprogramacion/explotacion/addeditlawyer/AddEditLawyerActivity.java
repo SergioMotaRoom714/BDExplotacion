@@ -1,11 +1,11 @@
-package com.herprogramacion.lawyersapp.addeditlawyer;
+package com.herprogramacion.explotacion.addeditlawyer;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.herprogramacion.lawyersapp.R;
-import com.herprogramacion.lawyersapp.lawyers.LawyersActivity;
+import com.herprogramacion.explotacion.R;
+import com.herprogramacion.explotacion.lawyers.LawyersActivity;
 
 public class AddEditLawyerActivity extends AppCompatActivity {
 

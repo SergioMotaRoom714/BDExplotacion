@@ -1,4 +1,4 @@
-package com.herprogramacion.lawyersapp.lawyers;
+package com.herprogramacion.explotacion.lawyers;
 
 
 import android.app.Activity;
@@ -15,12 +15,12 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.herprogramacion.lawyersapp.R;
-import com.herprogramacion.lawyersapp.addeditlawyer.AddEditLawyerActivity;
-import com.herprogramacion.lawyersapp.data.LawyersDbHelper;
-import com.herprogramacion.lawyersapp.lawyerdetail.LawyerDetailActivity;
+import com.herprogramacion.explotacion.R;
+import com.herprogramacion.explotacion.addeditlawyer.AddEditLawyerActivity;
+import com.herprogramacion.explotacion.data.ExplotacionDbHelper;
+import com.herprogramacion.explotacion.lawyerdetail.LawyerDetailActivity;
 
-import static com.herprogramacion.lawyersapp.data.LawyersContract.LawyerEntry;
+import static com.herprogramacion.explotacion.data.ExplotacionContract.LawyerEntry;
 
 
 /**
@@ -29,7 +29,7 @@ import static com.herprogramacion.lawyersapp.data.LawyersContract.LawyerEntry;
 public class LawyersFragment extends Fragment {
     public static final int REQUEST_UPDATE_DELETE_LAWYER = 2;
 
-    private LawyersDbHelper mLawyersDbHelper;
+    private ExplotacionDbHelper mExplotacionDbHelper;
 
     private ListView mLawyersList;
     private LawyersCursorAdapter mLawyersAdapter;
@@ -76,10 +76,10 @@ public class LawyersFragment extends Fragment {
         });
 
 
-        getActivity().deleteDatabase(LawyersDbHelper.DATABASE_NAME);
+        getActivity().deleteDatabase(ExplotacionDbHelper.DATABASE_NAME);
 
         // Instancia de helper
-        mLawyersDbHelper = new LawyersDbHelper(getActivity());
+        mExplotacionDbHelper = new ExplotacionDbHelper(getActivity());
 
         // Carga de datos
         loadLawyers();
@@ -126,7 +126,7 @@ public class LawyersFragment extends Fragment {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mLawyersDbHelper.getAllLawyers();
+            return mExplotacionDbHelper.getAllLawyers();
         }
 
         @Override

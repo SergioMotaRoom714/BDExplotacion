@@ -1,4 +1,4 @@
-package com.herprogramacion.lawyersapp.lawyers;
+package com.herprogramacion.explotacion.lawyers;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -15,8 +15,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
-import com.herprogramacion.lawyersapp.R;
-import com.herprogramacion.lawyersapp.data.LawyersContract.LawyerEntry;
+import com.herprogramacion.explotacion.R;
+import com.herprogramacion.explotacion.data.ExplotacionContract.LawyerEntry;
 
 /**
  * Adaptador de abogados

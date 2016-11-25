@@ -1,12 +1,12 @@
-package com.herprogramacion.lawyersapp.lawyerdetail;
+package com.herprogramacion.explotacion.lawyerdetail;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
-import com.herprogramacion.lawyersapp.R;
-import com.herprogramacion.lawyersapp.lawyers.LawyersActivity;
+import com.herprogramacion.explotacion.R;
+import com.herprogramacion.explotacion.lawyers.LawyersActivity;
 
 public class LawyerDetailActivity extends AppCompatActivity {
 

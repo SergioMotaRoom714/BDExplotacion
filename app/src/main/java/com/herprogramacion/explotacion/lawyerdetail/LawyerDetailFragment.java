@@ -1,4 +1,4 @@
-package com.herprogramacion.lawyersapp.lawyerdetail;
+package com.herprogramacion.explotacion.lawyerdetail;
 
 
 import android.app.Activity;
@@ -18,12 +18,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.herprogramacion.lawyersapp.R;
-import com.herprogramacion.lawyersapp.addeditlawyer.AddEditLawyerActivity;
-import com.herprogramacion.lawyersapp.data.Lawyer;
-import com.herprogramacion.lawyersapp.data.LawyersDbHelper;
-import com.herprogramacion.lawyersapp.lawyers.LawyersActivity;
-import com.herprogramacion.lawyersapp.lawyers.LawyersFragment;
+import com.herprogramacion.explotacion.R;
+import com.herprogramacion.explotacion.addeditlawyer.AddEditLawyerActivity;
+import com.herprogramacion.explotacion.data.Lawyer;
+import com.herprogramacion.explotacion.data.ExplotacionDbHelper;
+import com.herprogramacion.explotacion.lawyers.LawyersActivity;
+import com.herprogramacion.explotacion.lawyers.LawyersFragment;
 
 /**
  * Vista para el detalle del abogado
@@ -39,7 +39,7 @@ public class LawyerDetailFragment extends Fragment {
     private TextView mSpecialty;
     private TextView mBio;
 
-    private LawyersDbHelper mLawyersDbHelper;
+    private ExplotacionDbHelper mExplotacionDbHelper;
 
 
     public LawyerDetailFragment() {
@@ -75,7 +75,7 @@ public class LawyerDetailFragment extends Fragment {
         mSpecialty = (TextView) root.findViewById(R.id.tv_specialty);
         mBio = (TextView) root.findViewById(R.id.tv_bio);
 
-        mLawyersDbHelper = new LawyersDbHelper(getActivity());
+        mExplotacionDbHelper = new ExplotacionDbHelper(getActivity());
 
         loadLawyer();
 
@@ -148,7 +148,7 @@ public class LawyerDetailFragment extends Fragment {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mLawyersDbHelper.getLawyerById(mLawyerId);
+            return mExplotacionDbHelper.getLawyerById(mLawyerId);
         }
 
         @Override
@@ -166,7 +166,7 @@ public class LawyerDetailFragment extends Fragment {
 
         @Override
         protected Integer doInBackground(Void... voids) {
-            return mLawyersDbHelper.deleteLawyer(mLawyerId);
+            return mExplotacionDbHelper.deleteLawyer(mLawyerId);
         }
 
         @Override

@@ -1,4 +1,4 @@
-package com.herprogramacion.lawyersapp;
+package com.herprogramacion.explotacion;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

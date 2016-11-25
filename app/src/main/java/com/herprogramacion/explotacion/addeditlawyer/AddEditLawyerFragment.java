@@ -1,4 +1,4 @@
-package com.herprogramacion.lawyersapp.addeditlawyer;
+package com.herprogramacion.explotacion.addeditlawyer;
 
 
 import android.app.Activity;
@@ -15,9 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.herprogramacion.lawyersapp.R;
-import com.herprogramacion.lawyersapp.data.Lawyer;
-import com.herprogramacion.lawyersapp.data.LawyersDbHelper;
+import com.herprogramacion.explotacion.R;
+import com.herprogramacion.explotacion.data.Lawyer;
+import com.herprogramacion.explotacion.data.ExplotacionDbHelper;
 
 /**
  * Vista para creación/edición de un abogado
@@ -27,7 +27,7 @@ public class AddEditLawyerFragment extends Fragment {
 
     private String mLawyerId;
 
-    private LawyersDbHelper mLawyersDbHelper;
+    private ExplotacionDbHelper mExplotacionDbHelper;
 
     private FloatingActionButton mSaveButton;
     private TextInputEditText mNameField;
@@ -84,7 +84,7 @@ public class AddEditLawyerFragment extends Fragment {
             }
         });
 
-        mLawyersDbHelper = new LawyersDbHelper(getActivity());
+        mExplotacionDbHelper = new ExplotacionDbHelper(getActivity());
 
         // Carga de datos
         if (mLawyerId != null) {
@@ -169,7 +169,7 @@ public class AddEditLawyerFragment extends Fragment {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return mLawyersDbHelper.getLawyerById(mLawyerId);
+            return mExplotacionDbHelper.getLawyerById(mLawyerId);
         }
 
         @Override
@@ -190,10 +190,10 @@ public class AddEditLawyerFragment extends Fragment {
         @Override
         protected Boolean doInBackground(Lawyer... lawyers) {
             if (mLawyerId != null) {
-                return mLawyersDbHelper.updateLawyer(lawyers[0], mLawyerId) > 0;
+                return mExplotacionDbHelper.updateLawyer(lawyers[0], mLawyerId) > 0;
 
             } else {
-                return mLawyersDbHelper.saveLawyer(lawyers[0]) > 0;
+                return mExplotacionDbHelper.saveLawyer(lawyers[0]) > 0;
             }
 
         }
